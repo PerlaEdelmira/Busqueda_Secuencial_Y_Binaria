@@ -12,3 +12,19 @@ def busquedaSecuencial(unaLista, datoBuscar):
         else:
             pos = pos+1
     return encontrado
+
+def busquedaBinaria(unaLista, elemento):
+    primero=0
+    ultimo = len(unaLista)-1
+    while(primero <= ultimo):
+        centro = int((primero+ultimo)/2)
+        valorCentro = unaLista[centro]
+        print("Comparando " + str(elemento)+ " Con " + str(unaLista[centro]))
+        
+        if elemento == valorCentro:
+            return centro
+        elif elemento < valorCentro:
+            ultimo = centro-1 #con el fin de desplazarnos a la izquierda
+        else:
+            primero = centro+1 #con el fin de desplazarnos a la derecha
+    return -1
