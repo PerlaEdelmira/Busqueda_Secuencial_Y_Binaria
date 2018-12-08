@@ -1,0 +1,14 @@
+'''
+Created on Nov 29, 2018
+@author: ztudent 17
+'''
+def busquedaSecuencial(unaLista, datoBuscar):
+    pos = 0
+    encontrado = False
+    
+    while pos <len(unaLista) and not encontrado:
+        if unaLista[pos] == datoBuscar:
+            encontrado = True
+        else:
+            pos = pos+1
+    return encontrado
