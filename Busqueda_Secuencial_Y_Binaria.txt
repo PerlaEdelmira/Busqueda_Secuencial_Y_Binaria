@@ -42,6 +42,9 @@ class MetodosBusqueda{
 		}
 		return -1;
 	}
+	public void mostrarVector(int[]numeros) {
+		System.out.println(Arrays.toString(numeros));
+	}
 
 }
 public class PruebaMetodosBusqueda {
