@@ -50,5 +50,41 @@ class MetodosBusqueda{
 public class PruebaMetodosBusqueda {
 	public static void main(String[] args) {
 
+		Scanner en = new Scanner(System.in);
+		MetodosBusqueda mb = new MetodosBusqueda();
+		int vec[];
+		String op;
+		vec = new int [100];
+		for(int i=0; i<vec.length; i++) {
+			vec[i]= new Random().nextInt(100);
+		}
+		do {
+			System.out.println("============== Menu ==============");
+			System.out.println("Ingrese la opcion que quiera:" + "\n1) Busqueda Secuencial"+ "\n2) Busqueda Binaria");
+			op = en.next();
+			
+			switch(op) {
+			case "1": System.out.println("--------> Busqueda Secuencial");
+						System.out.println("Vector: ");
+						mb.mostrarVector(vec);
+						mb.BusquedaSecuencial(vec);break;
+			case "2":System.out.println("--------> Busqueda Binaria");
+						Arrays.sort(vec);
+						System.out.println("Vector ya ordenado");
+						System.out.println(Arrays.toString(vec));
+						System.out.println("Ingrese un numero: ");
+						int elemento = en.nextInt();
+						int indice = mb.busquedaBinaria(vec, elemento);
+			
+						if (indice != -1 ) {
+							System.out.println("El Elemento " + elemento + "Se encuentra en el indice: " + indice);
+						}else {
+							System.out.println("El Elemento no existe");
+						}break;
+			
+			}
+		}while(op != "3");
+		
+
 	}
 }
